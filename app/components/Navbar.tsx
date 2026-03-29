@@ -2,12 +2,14 @@
 
 import "../style.css";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="navbar">
       <div className="navbardibba">
-
 
         <div className="logo">
           <div className="hexlogo">
@@ -19,7 +21,7 @@ export default function Navbar() {
           </div>
         </div>
 
-
+        {/* Desktop nav */}
         <div className="navright">
           <nav className="navmenu">
             <Link href="#">WHO WE SERVE</Link>
@@ -46,7 +48,40 @@ export default function Navbar() {
           </div>
         </div>
 
+        {/* Hamburger button — mobile only */}
+        <button
+          className={`hamburger ${menuOpen ? "hamburger--open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
       </div>
+
+      {/* Mobile dropdown menu */}
+      <div className={`mobilemenu ${menuOpen ? "mobilemenu--open" : ""}`}>
+        <nav className="mobilenav">
+          <Link href="#" onClick={() => setMenuOpen(false)}>WHO WE SERVE</Link>
+          <Link href="#" onClick={() => setMenuOpen(false)}>SOLUTIONS</Link>
+          <Link href="#" onClick={() => setMenuOpen(false)}>RESOURCES</Link>
+          <Link href="#" onClick={() => setMenuOpen(false)}>ABOUT US</Link>
+          <Link href="#" onClick={() => setMenuOpen(false)}>CONTACT US</Link>
+        </nav>
+        <div className="mobilemenu-footer">
+          <div className="select">
+            <span>IND</span>
+            <span className="dwn">▼</span>
+          </div>
+          <div className="select">
+            <span>ENGLISH</span>
+            <span className="dwn">▼</span>
+          </div>
+        </div>
+      </div>
+
     </header>
   );
 }
