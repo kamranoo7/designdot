@@ -1,6 +1,7 @@
-body {
+html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   background: #ffffff;
   color: #111;
   font-family: 'Inter', sans-serif;
@@ -688,41 +689,24 @@ margin-top: 20px;
   line-height: 1.3;
 }
 
-@media (min-width: 1024px) {
-  .NavigationLinks {
-    display: flex;
-  }
-}
-
+/* ===== TABLET (max 1024px) ===== */
 @media (max-width: 1024px) {
-  .HeroSection {
-    flex-direction: column;
-    min-height: auto;
+  .navmenu {
+    gap: 16px;
   }
 
-  .HeroContent {
-    width: 100%;
-    padding: 100px 40px 280px;
+  .navmenu a {
+    font-size: 12px;
   }
 
-  .HeroVisual {
-    top: 75%;
-    left: 50%;
-    right: auto;
-    bottom: auto;
-    width: 200vh;
-    height: 200vh;
-    transform: translate(-50%, -10%);
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-size: contain;
-    mask-size: contain;
+  .topiccont {
+    padding: 0 30px;
+    gap: 30px;
   }
 
-  .HeroHeadline {
-    font-size: 34px;
-    position: relative;
-    top: auto;
+  .topicsgrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
   .AboutWrapper {
@@ -734,63 +718,380 @@ margin-top: 20px;
     flex-direction: column;
   }
 
-  .InspirationContainer {
+  .insightcontan {
     flex-direction: column;
+    gap: 30px;
   }
 
-  .InsightsDisplay {
+  .insightright {
     width: 100%;
-    height: auto;
-    flex-direction: column;
-    gap: 20px;
+    min-height: 300px;
+    height: 300px;
   }
 
-  .FeaturedInsight,
-  .SideInsight {
-    height: 350px;
-    width: 100%;
-    flex: none;
-  }
-
-  .VerticalTag {
-    bottom: 20%;
-  }
-
-  .TrendingContainer {
-    flex-direction: column;
-    gap: 24px;
-    padding: 0 24px;
-  }
-
-  .TrendingGrid {
-    grid-template-columns: repeat(2, 1fr);
+  .insightlist {
+    max-width: 100%;
   }
 }
 
+/* ===== MOBILE (max 768px) ===== */
 @media (max-width: 768px) {
-  .NavbarContainer {
+
+  /* --- Navbar --- */
+  .navbardibba {
     padding: 0 20px;
+    justify-content: space-between;
+    height: 56px;
   }
 
-  .NavbarRight {
-    gap: 20px;
+  .navmenu {
+    display: none;
   }
 
   .logo-icon {
-    width: 80px;
+    width: 76px;
   }
 
-  .HeroContent {
-    padding: 80px 24px 220px;
+  .navact {
+    gap: 10px;
+  }
+
+  .select {
+    font-size: 11px;
+    margin-top: 16px;
+    letter-spacing: 0.4px;
+  }
+
+  .search {
+    margin-top: 16px;
+  }
+
+  /* --- Hero section --- */
+  .box {
+    flex-direction: column;
+    min-height: auto;
+    padding-top: 56px;
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+
+  .boxLeft {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 44px 24px 36px;
+    justify-content: flex-start;
+  }
+
+  .boxsub {
+    font-size: 8.5px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .boxtitle {
+    font-size: 30px;
+    letter-spacing: -0.5px;
+    line-height: 1.05;
+  }
+
+  .boxtitle::after {
+    margin-top: 14px;
+    margin-bottom: 18px;
+  }
+
+  .boxdesc {
+    font-size: 13.5px;
+    max-width: 100%;
+    line-height: 1.7;
+  }
+
+  .boxbtn {
+    margin-top: 32px;
+    padding: 14px 28px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .boxfooterrr {
+    font-size: 8.5px;
+    padding-top: 32px;
+    letter-spacing: 1px;
+  }
+
+  /* Heart image — shown below hero content, full width */
+  .boxImage {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    height: 260px;
+    margin: 0 auto;
+  }
+
+  /* Social proof strip */
+  .boxsocial {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    padding: 20px 24px 28px;
+    justify-content: flex-start;
+    background: #0c2a8a;
+  }
+
+  .proofcount {
+    font-size: 22px;
+  }
+
+  .prooflabel {
+    font-size: 9px;
+  }
+
+  .singleava {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* --- Hot Topics --- */
+  .topicsection {
+    padding: 36px 0 40px;
+  }
+
+  .topiccont {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 18px;
+  }
+
+  .topiclabel {
+    width: fit-content;
+  }
+
+  .topicsgrid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .topicitem {
+    min-height: auto;
+    padding: 16px 0;
+    padding-right: 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .topicline {
+    display: none;
+  }
+
+  .topictsxt {
+    font-size: 13px;
+  }
+
+  .topicarrw {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+
+  /* --- About section --- */
+  .About {
+    padding: 36px 0;
+  }
+
+  .AboutWrapper {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 28px;
+  }
+
+  .CompanyInfo {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .SectionLabel {
+    min-width: auto;
+    padding: 16px 24px;
+    border-radius: 14px;
+  }
+
+  .SectionLabel h2 {
+    font-size: 18px;
+  }
+
+  .IntroText h3 {
+    font-size: 18px;
+  }
+
+  .IntroText p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .LegacyStats {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .StatItemSeparator {
+    grid-column: span 2;
+    margin: 4px 0;
+  }
+
+  .StatItem h4 {
+    font-size: 26px;
+  }
+
+  .StatItem p {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .VisualHighlights {
+    align-items: flex-start;
+  }
+
+  .LocationBadge {
+    font-size: 11px;
+    padding: 9px 18px;
+    gap: 14px;
+  }
+
+  .OfficeImage {
+    min-height: 220px;
+    border-radius: 18px;
+  }
+
+  /* --- Insights section --- */
+  .inmsight {
+    padding: 40px 0 50px;
+  }
+
+  .insightcontan {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 24px;
+  }
+
+  .insighthead {
+    width: 100%;
+    height: auto;
+    padding: 20px 24px;
+    box-sizing: border-box;
+    border-radius: 12px;
+  }
+
+  .insighthead p {
+    font-size: 17px;
+  }
+
+  .insightlist {
+    max-width: 100%;
+  }
+
+  .iswnightitem-title {
+    font-size: 14px;
+  }
+
+  .iswnightitem-desc {
+    font-size: 12.5px;
+    line-height: 1.7;
+  }
+
+  /* Insight cards — stack vertically */
+  .insightright {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
+  }
+
+  /* Main big card */
+  .cardmain {
+    width: 100%;
+    min-height: 240px;
+    flex: none;
+    border-radius: 14px;
+  }
+
+  .card1 h4 {
+    font-size: 15px;
+  }
+
+  .card1 p {
+    font-size: 11px;
+  }
+
+  /* Side cards — show as horizontal row */
+  .cardpart {
+    width: 100%;
+    min-height: 120px;
+    flex: none;
+    border-radius: 14px;
+  }
+
+  /* Fix "Operations" / "Growth & Expansion" text:
+     On mobile these are wide horizontal cards so
+     we show text horizontally at the bottom, not rotated */
+  .strippp {
+    bottom: auto;
+    left: auto;
+    top: auto;
+    right: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    rotate: none;
+    writing-mode: horizontal-tb;
+    text-align: left;
+    padding: 10px 16px 14px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    font-size: 12.5px;
+    letter-spacing: 0.5px;
+    white-space: normal;
+    border-radius: 0 0 14px 14px;
   }
 }
 
+/* ===== SMALL MOBILE (max 480px) ===== */
 @media (max-width: 480px) {
-  .TrendingGrid {
-    grid-template-columns: 1fr;
+  .boxtitle {
+    font-size: 26px;
+    letter-spacing: -0.5px;
   }
 
-  .HeroHeadline {
-    font-size: 28px;
+  .boxsub {
+    font-size: 7.5px;
+  }
+
+  .boxfooterrr {
+    font-size: 8px;
+  }
+
+  .StatItem h4 {
+    font-size: 24px;
+  }
+
+  .insighthead p {
+    font-size: 15px;
+  }
+
+  .cardmain {
+    min-height: 220px;
+  }
+
+  .cardpart {
+    min-height: 110px;
+  }
+
+  .topiccont {
+    padding: 0 16px;
+  }
+
+  .AboutWrapper,
+  .insightcontan {
+    padding: 0 16px;
   }
 }
