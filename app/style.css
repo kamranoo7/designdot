@@ -158,6 +158,7 @@ body {
   width: 22px;
   height: 2.5px;
   background: #111;
+
   border-radius: 2px;
   transition: transform 0.25s ease, opacity 0.2s ease;
   transform-origin: center;
@@ -179,19 +180,23 @@ body {
 
 /* ===== MOBILE DROPDOWN MENU ===== */
 .mobilemenu {
-  display: none;
-  /* hidden on desktop */
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  /* 🔥 key change */
+  top: 56px;
+  /* height of your navbar */
   left: 0;
   right: 0;
+
   background: #ffffff;
   border-top: 1px solid #eee;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease, padding 0.35s ease;
-  z-index: 999;
+
+  z-index: 2000;
+  /* higher than everything */
 }
 
 .mobilemenu--open {
@@ -849,6 +854,7 @@ body {
   /* Show hamburger on mobile */
   .hamburger {
     display: flex;
+
   }
 
   /* Show mobile menu when open */
@@ -955,6 +961,7 @@ body {
   /* --- Hot Topics --- */
   .topicsection {
     padding: 36px 0 40px;
+
   }
 
   .topiccont {
