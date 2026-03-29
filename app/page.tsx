@@ -1,65 +1,176 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import Navbar from "./components/Navbar";
+import "./style.css";
+
+export default function HomePage() {
+  const topic = [
+    { id: 1, title: "Parliament Introduces Income Tax Bill to Reshape India's Direct Tax Landscape" },
+    { id: 2, title: "Indian Export Earnings at Risk as U.S. Tariffs Double to 50%" },
+    { id: 3, title: "India Eases Select BIS Norms While Tightening Overall Standards Enforcement" },
+    { id: 4, title: "India Modernizes Maritime Law with Carriage of Goods by Sea Bill, 2025" },
+  ];
+
+  const test = [
+    {
+      title: "Pre-market Entry",
+      desc: "Pre-market entry means trading securities before regular market hours to react to overnight news, with lower liquidity and wider spreads.",
+      active: true,
+    },
+    {
+      title: "Market Entry",
+      desc: "Research demand, assess competition, choose mode, localize offering, comply regulations, price strategically, partner locally, iterate learning.",
+    },
+    {
+      title: "Operations",
+      desc: "Planning, organizing, and managing processes to efficiently produce goods or services, ensuring quality, cost-effectiveness, and customer satisfaction.",
+    },
+    {
+      title: "Growth & Expansion",
+      desc: "Increasing business size, market reach, revenue, and resources to achieve long-term sustainability and competitive advantage.",
+    },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="page">
+      <Navbar />
+
+      <section className="box">
+        <div className="boxImage">
+          <img src="/image3.jpg" alt="office" />
+        </div>
+
+        <div className="boxLeft">
+          <p className="boxsub">ACCOUNTANTS AND GLOBAL BUSINESS ADVISORS</p>
+          <h1 className="boxtitle">EMPOWERED <br /> WORKPLACES</h1>
+          <p className="boxdesc">
+            by fostering inclusivity, encouraging growth, promoting
+            collaboration, valuing diversity, supporting innovation, and
+            building trust for shared success.
+          </p>
+          <button className="boxbtn">→ LETS CONNECT</button>
+          <p className="boxfooterrr">
+            ACCOUNTING, TAXATION, & BUSINESS ADVISORY BETWEEN INDIA, JAPAN, AND THE WORLD
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="boxsocial">
+          <div className="avatarrow">
+            <div className="singleava av1"><img src="/image7.png" alt="" /></div>
+            <div className="singleava av2"><img src="/image5.png" alt="" /></div>
+            <div className="singleava av3"><img src="/image6.png" alt="" /></div>
+            <div className="singleava morebtn">MORE</div>
+          </div>
+          <div className="prooftext">
+            <span className="proofcount">250 +</span>
+            <span className="prooflabel">Enjoy Working<br />with us</span>
+          </div>
         </div>
-      </main>
+      </section>
+
+      <section className="topicsection">
+        <div className="topiccont">
+          <div className="topiclabel">
+            <span className="label1">HOT TOPICS</span>
+            <div className="label2"></div>
+          </div>
+          <div className="topicsgrid">
+            {topic.map((t) => (
+              <div key={t.id} className="topicitem">
+                <div className="topicline"></div>
+                <p className="topictsxt">{t.title}</p>
+                <div className="topicarrw">→</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="About">
+        <div className="AboutWrapper">
+
+          <div className="CompanyInfo">
+            <div className="SectionLabel">
+              <h2>ABOUT<br />FIRM</h2>
+            </div>
+
+            <div className="CompanyDescription">
+              <div className="IntroText">
+                <h3>HLS Global Group</h3>
+                <p>
+                  is an international accounting and business advisory firm with a focus on providing superior
+                  services in the areas of accounting, tax, audit, advisory, and consulting. Founded in 1990,
+                  we pride ourselves in delivering the highest levels of quality and customer service while
+                  remaining cost-effective. We have grown to more than 250 professionals serving clients in
+                  the United States, Japan, Mexico, India, Germany, and UAE. While catering to the business
+                  requirements of Japanese subsidiaries operating in the United States, Mexico, India, Germany,
+                  and UAE, we also provide comprehensive solutions to non-Japanese multinational companies
+                  operating in Japan.
+                </p>
+              </div>
+
+              <div className="LegacyStats">
+                <div className="StatItem"><h4>250+</h4><p>Professional Staff<br />Members Globally</p></div>
+                <div className="StatItem"><h4>1000+</h4><p>Clients in the HLS<br />Global Network</p></div>
+                <div className="StatItemSeparator"></div>
+                <div className="StatItem"><h4>35+</h4><p>Years of Experience<br />Connecting Japan<br />and the World</p></div>
+                <div className="StatItem"><h4>15+</h4><p>Countries Covered<br />With Our Alliance<br />Network</p></div>
+              </div>
+            </div>
+          </div>
+
+          <div className="VisualHighlights">
+            <div className="LocationBadge">
+              <span>WE ARE LOCATED</span>
+              <span>INDIA ▼</span>
+            </div>
+            <div className="OfficeImage">
+              <img src="/image1.png" alt="Building" />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section className="inmsight">
+        <div className="insightcontan">
+
+          <div className="insighthead">
+            <p>INSPIRATION &<br />INSIGHTS</p>
+          </div>
+
+          <div className="insightlist">
+            {test.map((item, idx) => (
+              <div key={idx} className={`iswnightitem ${item.active ? 'active' : ''}`}>
+                <h3 className="iswnightitem-title">{item.title}</h3>
+                <p className="iswnightitem-desc">{item.desc}</p>
+                <div className="iswnightitem-line"></div>
+              </div>
+            ))}
+          </div>
+
+          <div className="insightright">
+            <div className="cardmain">
+              <img src="/image4.jpg" alt="Pre-market" />
+              <div className="card1">
+                <h4>Pre-Market</h4>
+                <p>Evaluating Supply Chain Readiness Before Committing Capital in Emerging Markets</p>
+              </div>
+            </div>
+            <div className="cardpart">
+              <img src="/image3.jpg" alt="Operations" />
+              <div className="strippp">Operations</div>
+            </div>
+            <div className="cardpart">
+              <img src="/image2.jpg" alt="Growth" />
+              <div className="strippp">Growth &<br />Expansion</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
     </div>
   );
 }
